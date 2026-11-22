@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trasmundos · Estrategia en tiempo real</title>
+<meta name="description" content="Cavaron demasiado hondo. Tres mundos pelean por el mismo mapa. Estrategia en tiempo real para iPhone y iPad, gratis.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Trasmundos · Cavaron demasiado hondo">
+<meta property="og:description" content="Tres mundos pelean por el mismo mapa. Estrategia en tiempo real para iPhone y iPad, gratis.">
+<meta property="og:image" content="https://javierandresxd.github.io/trasmundos-app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://javierandresxd.github.io/trasmundos-app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-itunes-app" content="app-id=6836825506">
+<link rel="icon" href="icono.png">
+<style>
+  :root { --fondo: #0B1013; --texto: #EEF2F4; --suave: #A9B6BC; --acento: #E39A5F; --linea: rgba(255,255,255,.12); }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: var(--fondo); color: var(--texto);
+         background-image: radial-gradient(70% 45% at 20% 0%, rgba(200,121,65,.18), transparent 70%),
+                           radial-gradient(70% 45% at 100% 100%, rgba(111,211,232,.10), transparent 70%);
+         font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+  main { max-width: 620px; margin: 0 auto; padding: 56px 16px 40px; }
+  .icono { width: 96px; height: 96px; border-radius: 22px; display: block; box-shadow: 0 0 0 1px var(--linea), 0 18px 50px rgba(0,0,0,.5); }
+  .ante { margin: 28px 0 6px; font: 600 13px/1.4 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--acento); }
+  h1 { margin: 0; font: 800 clamp(44px, 12vw, 72px)/.92 "Avenir Next Condensed", "Arial Narrow", -apple-system, sans-serif; text-transform: uppercase; letter-spacing: -.01em; }
+  h1 em { font-style: normal; color: var(--acento); display: block; }
+  .relato { margin: 22px 0 30px; color: var(--suave); font-size: 18px; }
+  .boton { display: inline-flex; align-items: center; gap: 10px; padding: 15px 24px; border-radius: 14px;
+           background: var(--texto); color: #0B1013; font-weight: 700; font-size: 18px; text-decoration: none; }
+  .boton:active { transform: translateY(1px); }
+  .nota { margin: 14px 0 0; color: var(--suave); font-size: 15px; }
+  ul { margin: 36px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--linea); }
+  li { padding: 14px 0; border-bottom: 1px solid var(--linea); color: var(--suave); }
+  li b { color: var(--texto); font-weight: 600; }
+  footer { margin-top: 40px; font-size: 14px; color: var(--suave); }
+  footer a { color: var(--suave); }
+</style>
+</head>
+<body>
+<main>
+  <img class="icono" src="icono.png" alt="">
+  <div class="ante" data-en="Real-time strategy · 1 player">Estrategia en tiempo real · 1 jugador</div>
+  <h1 data-en="Trasmundos<em>They dug too deep.</em>">Trasmundos<em>Cavaron demasiado hondo.</em></h1>
+  <p class="relato" data-en="At the North Pit they dug deeper than the plans said. Under the copper there were hyphae, and they were awake. Where the vein touched the fungus, a third world was born. Now all three fight over the same map.">En el Rajo Norte cavaron más hondo de lo que decían los planos. Bajo el cobre había hifas, y estaban despiertas. Donde la veta tocó al hongo nació un tercer mundo. Ahora los tres pelean por el mismo mapa.</p>
+
+  <a class="boton" id="app-store" href="https://apps.apple.com/app/id6836825506" data-en="Download on the App Store">Descargar en App Store</a>
+  <p class="nota" data-en="Free for iPhone and iPad. Android: coming soon to Google Play.">Gratis para iPhone y iPad. Android: muy pronto en Google Play.</p>
+
+  <ul>
+    <li data-en="<b>Three worlds, fifteen species.</b> Mining basin, fungal forest and the colony on the lode."><b>Tres mundos, quince especies.</b> Cuenca minera, bosque micelar y la colonia sobre el filón.</li>
+    <li data-en="<b>Short matches.</b> Tap your village, tap the destination: whoever arrives stronger keeps it."><b>Partidas cortas.</b> Toca tu aldea, toca el destino: quien llega con más fuerza se queda con ella.</li>
+    <li data-en="<b>Offline, in 13 languages.</b> No account, no timers, nothing to buy to progress."><b>Sin conexión y en 13 idiomas.</b> Sin cuentas, sin esperas y sin nada que comprar para avanzar.</li>
+  </ul>
+
+  <footer>Kaha Innovations SpA · <a href="soporte.html" data-en="Support">Soporte</a> · <a href="privacidad.html" data-en="Privacy">Privacidad</a></footer>
+</main>
+<script>
+  // En iPhone y iPad va directo a la App Store; en el resto se queda la página.
+  // (iPadOS se presenta como Mac: se reconoce porque tiene pantalla táctil.)
+  var ua = navigator.userAgent;
+  var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (ios && !/[?&]quedarse/.test(location.search)) location.replace(document.getElementById('app-store').href);
+  // Fuera del español, en inglés
+  if (!/^es\b/i.test(navigator.language || '')) {
+    document.documentElement.lang = 'en';
+    document.querySelectorAll('[data-en]').forEach(function (el) { el.innerHTML = el.getAttribute('data-en'); });
+  }
+</script>
+</body>
+</html>
