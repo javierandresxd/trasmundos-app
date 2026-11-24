@@ -26,8 +26,9 @@ th{background:#f5f6f7}
 .idiomas{display:flex;gap:8px;margin-bottom:8px;position:sticky;top:0;background:var(--fondo);padding:14px 0;z-index:2}
 .idiomas button{font:inherit;font-size:14px;padding:7px 15px;border:1px solid var(--linea);
   background:#fff;border-radius:999px;cursor:pointer;color:var(--suave)}
-.idiomas button[aria-pressed=true]{background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.idiomas button[aria-pressed=true]{background:var(--tinta);color:var(--fondo);border-color:var(--tinta)}
 section[hidden]{display:none}
+section{scroll-margin-top:72px}
 @media (prefers-color-scheme:dark){
   :root{--tinta:#e6eaed;--suave:#9aa6ae;--linea:#2b3238;--fondo:#14181b;--acento:#e0a06a}
   code{background:#222a2f}
